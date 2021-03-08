@@ -1,3 +1,11 @@
+<?php
+
+    include ('includes/database.php');
+    include ('functions/functions.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +38,7 @@
           <ul class="menu">
             <!-- cmenu Begin -->
             <li><a href="customer_register.php"><i class="fa fa-user"></i> Register</a></li>
-            <li><a href="checkout.php">My Account</a></li>
+            <li><a href="../customer/my_account.php">My Account</a></li>
             <li><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
             <li><a href="checkout.php">Login</a></li>
           </ul>
@@ -82,7 +90,7 @@
               <!-- nav navbar-nav left Begin -->
               <li class="active"><a href="index.php">Home</a></li>
               <li><a href="shop.php">Shop</a></li>
-              <li><a href="checkout.php">My Account</a></li>
+              <li><a href="customer/my_account.php">My Account</a></li>
               <li><a href="cart.php">Shopping Cart</a></li>
               <li><a href="contact.php">Contact Us</a></li>
             </ul>
@@ -164,24 +172,50 @@
           <!-- carousel-indicators Finish -->
 
           <div class="carousel-inner">
-            <!-- carousel-inner Begin -->
+           
+            <?php
+            
+              $get_slides = "SELECT * FROM slider LIMIT 0,1";
 
-            <div class="item active">
-              <img src="admin_area/slides_images/slide-1.jpg" alt="Slider Image 1" />
-            </div>
-            <div class="item">
-              <img src="admin_area/slides_images/slide-2.jpg" alt="Slider Image 2" />
-            </div>
+              $run_slides = mysqli_query($conn, $get_slides);
 
-            <div class="item">
-              <img src="admin_area/slides_images/slide-3.jpg" alt="Slider Image 3" />
-            </div>
+               while($row_slides = mysqli_fetch_array($run_slides)){
 
-            <div class="item">
-              <img src="admin_area/slides_images/slide-4.jpg" alt="Slider Image 4" />
-            </div>
+                    $slide_name = $row_slides['slide_name'];
+
+                    $slide_image = $row_slides['slide_image'];
+
+                    echo "
+                        <div class='item active'>
+
+                        <img src='admin_area/slides_images/$slide_image'>
+
+                        </div>
+                    ";
+               }
+            
+
+              $get_slides = "SELECT * FROM slider LIMIT 1,3";
+
+              $run_slides = mysqli_query($conn, $get_slides);
+
+               while($row_slides = mysqli_fetch_array($run_slides)){
+
+                    $slide_name = $row_slides['slide_name'];
+
+                    $slide_image = $row_slides['slide_image'];
+
+                    echo "
+                        <div class='item'>
+
+                        <img src='admin_area/slides_images/$slide_image'>
+
+                        </div>
+                    ";
+               }
+            ?>
+
           </div>
-          <!-- carousel-inner Finish -->
 
           <!-- left carousel-control Begin -->
           <a href="#myCarousel" class="left carousel-control" data-slide="prev">
@@ -203,10 +237,11 @@
     </div>
     <!-- container Finish -->
 
+
     <!-- begin advantage -->
     <div class="advantages">
       <!-- begin container -->
-      <div class="container">
+      <div class="container-fluid">
         <!-- begin same-height-row -->
         <div class="same-height-row">
         <!-- begin col-sm-4 -->
@@ -222,7 +257,7 @@
                     <!-- end icon -->
 
                   <h3><a href="#">We Love Our Customer </a></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, velit voluptas. Reiciendis deleniti excepturi in vero perspiciatis consequatur, nihil molestias voluptates fuga tenetur iusto optio commodi explicabo nostrum, ex blanditiis.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sint ipsam possimus, minus voluptatum a ratione quam placeat dolores accusamus error autem voluptates eligendi, ad.</p>
 
               </div>
               <!-- end box same-height -->
@@ -242,7 +277,7 @@
                     <!-- end icon -->
 
                         <h3><a href="#">Best Prices</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sint ipsam possimus, minus voluptatum a ratione quam placeat dolores accusamus error autem voluptates eligendi, ad, officiis dignissimos atque eius voluptas!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sint ipsam possimus, minus voluptatum a ratione quam placeat dolores accusamus error autem voluptates eligendi, ad.</p>
               </div>
               <!-- end box same-height -->
             </div>
@@ -258,7 +293,7 @@
                     </div>
                     <!-- end icon -->
                         <h3><a href="#">Our Product are 100% Original</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iure officia quos minima vitae deserunt laudantium necessitatibus ipsam adipisci doloremque eveniet explicabo mollitia quisquam fuga voluptatibus voluptas, culpa ducimus harum</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sint ipsam possimus, minus voluptatum a ratione quam placeat dolores accusamus error autem voluptates eligendi, ad.</p>
               </div>
               <!-- end box same-height -->
             </div>
@@ -288,7 +323,7 @@
     </div>
     <!-- end hot -->
 
-<!-- begin content -->
+     <!-- begin content -->
 <div id="content">
         <!-- begin container -->
       <div class="container">
@@ -296,122 +331,17 @@
             <div class="row">
                 <!-- begin col-sm-4 col-sm-6 single -->
                   <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
 
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-              </div>
-            <!-- end row -->
 
-            <!-- begin row -->
-            <div class="row">
-                <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
+                        <?php
+                        
+                        
+                            getPro();
+                        
+                        ?>
+                        
                           <!-- begin product -->
-                          <div class="product">
+                          <!-- <div class="product">
                                 <a href="details.php">
                                     <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
                                 </a>
@@ -431,89 +361,7 @@
                                           </a>
                                       </p>
                                   </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
-                          <!-- end product -->
-                  </div>
-                  <!-- end col-sm-4 col-sm-6 single -->
-
-                   <!-- begin col-sm-4 col-sm-6 single -->
-                  <div class="col-sm-4 col-sm-6 single">
-                          <!-- begin product -->
-                          <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div>
+                          </div> -->
                           <!-- end product -->
                   </div>
                   <!-- end col-sm-4 col-sm-6 single -->
@@ -523,12 +371,14 @@
       <!-- end container -->
 </div>
 <!-- end content -->
-
+  </div>
     <?php
+
         require "includes/footer.php";
+
     ?>
-    <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>
-  </body>
+<script src="js/jquery-331.min.js"></script>
+<script src="js/bootstrap-337.min.js"></script>
+</body>
 
 </html>

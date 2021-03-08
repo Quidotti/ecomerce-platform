@@ -299,8 +299,13 @@ text-align: center;
 }
 
 
+/* Styling the cart section */
+.table tbody img{
+  width:100px;
+}
+.table tbody tr td{
 
-
+}
 
 
 /* styling the footer section */

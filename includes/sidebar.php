@@ -23,7 +23,6 @@
 <!-- end panel panel-default side-menu -->
 
 
-
 <!-- begin panel panel-default side-menu -->
 <div class="panel panel-default sidebar-menu">
      <!-- begin panel-heading -->

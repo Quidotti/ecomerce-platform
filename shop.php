@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -82,7 +81,7 @@
               <!-- nav navbar-nav left Begin -->
               <li ><a href="index.php">Home</a></li>
               <li class="active"><a href="shop.php">Shop</a></li>
-              <li><a href="checkout.php">My Account</a></li>
+              <li><a href="customer/my_account.php">My Account</a></li>
               <li><a href="cart.php">Shopping Cart</a></li>
               <li><a href="contact.php">Contact Us</a></li>
             </ul>
@@ -91,11 +90,11 @@
           <!-- padding-nav Finish -->
 
           <a href="cart.php" class="btn navbar-btn btn-primary right">
-            <!-- btn navbar-btn btn-primary Begin -->
+              <!-- btn navbar-btn btn-primary Begin -->
 
-            <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-shopping-cart"></i>
 
-            <span>4 Items In Your Cart</span>
+              <span>4 Items In Your Cart</span>
           </a><!-- btn navbar-btn btn-primary Finish -->
 
           <div class="navbar-collapse collapse right">
@@ -264,7 +263,6 @@
                                   </div>
                           </div>
                           <!-- end product -->
-
                         </div>
                         <!-- end col-md-4 col-md-6 -->
 
@@ -292,9 +290,8 @@
                                           </a>
                                       </p>
                                   </div>
-                          </div>
+                              </div>
                           <!-- end product -->
-
                         </div>
                         <!-- end col-md-4 col-md-6 -->
 
@@ -358,7 +355,6 @@
                         <!-- end col-md-4 col-md-6 -->
                   </div>
                   <!-- end row -->
-
                    <center>
                       <ul class="pagination">
                         <li><a href="">First Page</a></li>
@@ -384,8 +380,6 @@
     <?php
         require "includes/footer.php";
     ?>
-
-    
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
   </body>
