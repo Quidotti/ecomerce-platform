@@ -8,6 +8,7 @@
      function getPro(){
 
           global $db;
+          
           $getProduct = "SELECT * FROM products order by 1 DESC LIMIT 0,1";
           $runProduct = mysqli_query($db, $getProduct);
 
@@ -19,7 +20,7 @@
                     $pro_img1 = $rowCount['product_img1'];
 
                     echo "
-                         <div class='col-sm-4 col-sm-6 single'>
+                         <div class='col-md-4 col-sm-6 single'>
                               <div class='product'>
                                    <a href='details.php?$pro_id=$pro_id'> 
                                         <img class='img-responsive' src='admin_area/product_images/$pro_img1' atl='product 1>

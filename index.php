@@ -332,37 +332,10 @@
                 <!-- begin col-sm-4 col-sm-6 single -->
                   <div class="col-sm-4 col-sm-6 single">
 
-
                         <?php
-                        
-                        
                             getPro();
                         
                         ?>
-                        
-                          <!-- begin product -->
-                          <!-- <div class="product">
-                                <a href="details.php">
-                                    <img class="img-responsive" src="admin_area/product_images/product1.jpeg" alt="product 1">
-                                </a>
-                                  <div class="text">
-                                      <h3>
-                                          <a href="details.php">
-                                              clintinFASHION T-Shirt
-                                          </a>
-                                      </h3>
-                                      
-                                      <p class="price">$30</p>
-                                      <p class="button">
-                                          <a href="details.php" class="btn btn-default">View Details</a>
-                                          <a href="details.ph" class="btn btn-primary">
-                                              <i class="fa fa-shopping-cart"></i>
-                                              Add To Cart
-                                          </a>
-                                      </p>
-                                  </div>
-                          </div> -->
-                          <!-- end product -->
                   </div>
                   <!-- end col-sm-4 col-sm-6 single -->
               </div>

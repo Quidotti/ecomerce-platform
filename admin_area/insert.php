@@ -6,15 +6,13 @@
      ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/bootstrap-337.min.css" />
-     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css" />
-     <title>Insert Product</title>
-
-</head> 
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="css/bootstrap-337.min.css" />
+          <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css" />
+          <title>Insert Product</title>
+     </head> 
 <body>
 <!-- begin row -->
 <div class="row">
@@ -27,7 +25,6 @@
      </div>
 </div>
 <!-- end row -->
-
 
 <!-- begin row -->
 <div class="row">
@@ -163,8 +160,3 @@
      <script src="js/bootstrap-337.min.js"></script>
 </body>
 </html>
-
-
-<?php
-
-?>
